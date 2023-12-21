@@ -1,0 +1,78 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body{
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+  
+.container{
+    max-height: 1440px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container h2{
+   padding:1rem 1rem;
+   font-size: 2.2rem;
+   text-align: center; 
+   background-color:bisque;
+   font-family:'Times New Roman', Times, serif;
+}
+ 
+.tbl{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl thead{
+    background:#424949;
+    color: #fff;
+    text-align: center;
+}
+
+.tbl thead tr th{
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    letter-spacing: 0.2rem;
+    vertical-align: top;
+    border: 1px solid #aab7b8;
+}
+
+.tbl tbody tr td{
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #aab7b8;
+    padding: 0.3rem;
+}
+
+.tbl tr:nth-child(even){
+    background: #ccc;
+}
+
+.tbl tr:hover td{
+    background: #bec4c4;
+    color: #000;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.tbl  a{
+    display: inline-block;
+    padding: 0.4rem;
+}
+
+h6{
+    background-color:rgb(190, 132, 111);
+}

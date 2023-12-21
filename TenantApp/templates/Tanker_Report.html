@@ -1,0 +1,169 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tenant_Entry</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'table.css' %}" rel="stylesheet">
+<style>
+    body {
+
+      background-color: #d1e8e3;
+      margin-top: 70px;
+  <!--        background-size: 1200px;-->
+  <!--        background-image: url(" {%static 'assets/img/white_backlog.jpg' %}")-->
+  
+    }
+
+    /* Style the welcome message */
+
+    .abc{
+     border-radius: 8px;
+        border: 2px solid #ccc;
+       height: 40px;
+        width:40px;
+        }
+    .xyz {
+
+      background-color: ;
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px 20px;
+
+    }
+
+    .xyz marquee {
+      font-weight: bold;
+    }
+
+    
+</style>
+</head>
+<body>
+
+{% include 'message.html' %}
+
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+
+  <a class="navbar-brand text-brand" href="/">&nbsp; AlkArjun<span class="color-b">Villa</span></a>
+
+
+  <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link active" href="/">Home</a>
+      </li>
+
+      {% if request.session.username %}
+      <li class="nav-item">
+        <a class="nav-link " href="Tenant_Entry">Tenant_Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="M_Meter_Report">M_Meter_Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="S_Meter_Report">S_Meter_Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="Tanker_Report">Tanker_Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="add">Register_Here</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout"> <span class="color-b">Logout</span></a>
+      </li>
+
+        <div class="xyz">
+          <img class="abc" src="{% static 'assets/img/avtar1.png' %}" alt="">
+     <marquee width="40%" direction="15px" scrollamount="3" height="20px">
+       Welcome! {{ request.session.name }}
+     </marquee>
+   </div>
+
+      {% else %}
+        <a class="nav-link" href="login"> <span class="color-b">Login Here</span> </a>
+      {% endif %}
+
+
+    </ul>
+  </div>
+</nav><!-- End Header/Navbar -->
+
+<center>
+<div class="container">
+  <div class="tb1_container">
+
+  <h2 class="mb-4">Tanker Entry Details</h2>
+
+  <form method="POST" action="Show_Tanker_Results">
+
+    {% csrf_token %}
+
+  <h6>
+    From:<input type="date" name = "fromdate">&nbsp;&nbsp;
+    To:<input type="date" name = "todate">&nbsp;&nbsp;
+    <input type = "submit" value = "Search">
+  </h6>
+ 
+
+  <table class="tbl">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Total Tanker</th>
+      <th>Tanker Amount</th>
+      <th>No. Of Tenant</th>
+      <th>Date</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+
+{% for i in data3 %}
+  <tbody>
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.month}}</td>
+      <td>{{i.year}}</td>
+      <td>{{i.totalTanker}}</td>
+      <td>{{i.amtPerTanker}}</td>
+      <td>{{i.numOfTenants}}</td>
+      <td>{{i.todaysdate}}</td>
+      <td>
+        <a href="tanker_data_edit?id={{i.id}}">Edit</a>
+      </td>
+      <td>
+        <a href="delete_Tanker?id={{i.id}}">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+{% endfor %}
+</table>
+</form>
+</div>
+</div>
+</center>
+
+<script>
+
+   setTimeout(function(){
+
+      if($("#msg").length > 0)
+      {
+        $("#msg").remove();
+      }
+
+   },2000);
+
+  </script>
+</div>
+</body>
+</html>

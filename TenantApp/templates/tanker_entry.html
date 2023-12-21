@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanker Entry</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include custom CSS for styling -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'tanker_entry.css' %}">
+    <style>
+    
+      body {
+        font-family:"Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+        background-color: #d1e8e3;
+        margin-top: 120px;
+    <!--        background-size: 1200px;-->
+    <!--        background-image: url(" {%static 'assets/img/white_backlog.jpg' %}")-->
+    
+      }
+      form{
+        background-image: url(" {%static 'assets/img/white_backlog.jpg' %}")
+      }
+
+      /* Style the welcome message */
+      .abc{
+       border-radius: 8px;
+          border: 2px solid #ccc;
+         height: 40px;
+          width:40px;
+          }
+      .xyz {
+  
+        background-color: ;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 20px;
+  
+      }
+  
+      .xyz marquee {
+        font-weight: bold;
+      }
+
+    </style>
+
+</head>
+<body>
+
+         <!-- ======= Header/Navbar ======= -->
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+
+      <a class="navbar-brand text-brand" href="/">&nbsp; AlkArjun<span class="color-b">Villa</span></a>
+
+
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+
+          {% if request.session.username %}
+          <li class="nav-item">
+            <a class="nav-link " href="meter_entry">Main Meter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="sub_meter">Sub Meter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="tanker_entry">Tanker Entry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="Tenant_Entry">Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="add">Register Here</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="logout"> <span class="color-b">Logout</span></a>
+          </li>
+
+            <div class="xyz">
+              <img class="abc" src="{% static 'assets/img/avtar1.png' %}" alt="">
+         <marquee width="40%" direction="15px" scrollamount="3" height="20px">
+           Welcome! {{ request.session.name }}
+         </marquee>
+       </div>
+       
+          {% else %}
+            <a class="nav-link" href="login"> <span class="color-b">Login Here</span> </a>
+          {% endif %}
+
+
+        </ul>
+      </div>
+  </nav><!-- End Header/Navbar -->  
+
+    <form action="tanker_data" method="post">
+        {% csrf_token %}
+    <div class="container mt-2">
+        <h2>Tanker Entry In Details</h2>
+
+        <div class="alert alert-warning">
+          <strong>Note:</strong> Please submit your Tanker Entry on the last day of the month.
+      </div>
+
+        <form id="tankerForm">
+            <div class="form-group">
+                <label for="month">Month:</label>
+                <input type="text" class="form-control" name="month" id="month" placeholder="Enter month" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input type="text" class="form-control" name="year" id="year" placeholder="Enter year" required>
+            </div>
+            <div class="form-group">
+                <label for="totalTanker">Total Tanker:</label>
+                <input type="number" class="form-control" name="totalTanker" id="totalTanker" placeholder="Enter total tankers" required>
+            </div>
+            <div class="form-group">
+                <label for="amtPerTanker">Amount Total Tanker:</label>
+                <input type="number" class="form-control" name="amtPerTanker" id="amtPerTanker" placeholder="Enter amount per tanker" required>
+            </div>
+            <div class="form-group">
+                <label for="numOfTenants">Select Number of Tenants:</label>
+                <select class="form-control" name="numOfTenants" id="numOfTenants" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <center>
+            <button type="submit" class="btn btn-primary">Enter</button>
+            </center>
+        </form>
+    </div>
+</form> 
+
+    <!-- Include Bootstrap and jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

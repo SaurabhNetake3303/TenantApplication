@@ -1,0 +1,204 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>  AlkArjun Villa - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: Tenant Managememnt - v4.10.0
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    body{
+      margin-top: 110px;
+    }
+    /* Style the welcome message */
+    .abc{
+     border-radius: 8px;
+        border: 2px solid #ccc;
+       height: 40px;
+        width:40px;
+        }
+    .xyz {
+
+      background-color: ;
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px 20px;
+
+    }
+
+    .xyz marquee {
+      font-weight: bold;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header/Navbar ======= -->
+
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+
+             <a class="navbar-brand text-brand" href="/">&nbsp; AlkArjun<span class="color-b">Villa</span></a>
+
+                  <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+                     <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+
+                        {% if request.session.username %}
+                        <li class="nav-item">
+                            <a class="nav-link " href="meter_entry">Main Meter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="sub_meter">Sub Meter</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link " href="tanker_entry">Tanker Entry</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link " href="Tenant_Entry">Report</a>
+                        </li>
+                       <li class="nav-item">
+                          <a class="nav-link " href="add">Register Here</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="logout"> <span class="color-b">Logout</span></a>
+                        </li>
+
+                          <div class="xyz">
+                            <img class="abc" src="{% static 'assets/img/avtar1.png' %}" alt="">
+                       <marquee width="40%" direction="15px" scrollamount="3" height="20px">
+                         Welcome! {{ request.session.name }}
+                       </marquee>
+                     </div>
+
+                        {% else %}
+                          <a class="nav-link" href="login"> <span class="color-b">Login Here</span> </a>
+                        {% endif %}
+
+ 
+                     </ul>
+               </div>
+  </nav>
+
+  <!-- End Header/Navbar -->
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="w3-content w3-section">
+        <img class="mySlides w3-animate-fading" src="/static/assets/img/1.jpg" style="width:100%; height:500px;">
+        <img class="mySlides w3-animate-fading" src="/static/assets/img/2.jpg" style="width:100%; height:500px;">
+        <img class="mySlides w3-animate-fading" src="/static/assets/img/3.jpg" style="width:100%; height:500px;">
+        <img class="mySlides w3-animate-fading" src="/static/assets/img/4.jpg" style="width:100%; height:500px;">
+        <img class="mySlides w3-animate-fading" src="/static/assets/img/5.jpg" style="width:100%; height:500px;">
+        <img class="mySlides w3-animate-fading" src="/static/assets/img/6.jpg" style="width:100%; height:500px;">
+    </div>    
+  </div> 
+</div> 
+    <hr>
+<script src="/static/my_js/slide.js"></script>
+
+  <!-- ======= Footer ======= -->
+
+
+  <div class="row" style="color: #ffbb2b" align="center">
+    <div class="col-md-4 wellfix">
+      <h4><strong>Contact Us</strong></h4><hr>
+      Address : Dattawadi Pune<br>
+      Mail : saurabhnetake2001@gmail.com <br>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4 wellfix">
+        <h4><strong>Developed By</strong></h4><hr>
+        <a href="#">@saurabh netake.in</a>
+    </div>
+</div>
+</div>
+  <section class="section-footer" align="center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="nav-footer">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="/">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="login">Login</a>
+              </li>
+
+            </ul>
+          </nav>
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
