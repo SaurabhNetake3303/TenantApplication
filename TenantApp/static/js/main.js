@@ -1,6 +1,5 @@
 /**
-* Template Name: EstateAgency - v4.10.0
-* Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
+* Template Name: Tenant App - v4.10.0
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
